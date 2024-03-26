@@ -19,7 +19,117 @@ export default function RootLayout ({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='es'>
+      <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <title>Diego Sotomayor - Desarrollador Full Stack TypeScript</title>
+        <meta
+          name='description'
+          content='Soy Diego Sotomayor, un desarrollador full stack con más de 3 años de experiencia en tecnologías como TypeScript, NextJS, T3 Stack, TRPC, MERN, Chatbot e Inteligencia Artificial.'
+        />
+        <meta
+          property='og:title'
+          content='Diego Sotomayor - Desarrollador Full Stack TypeScript'
+        />
+        <meta
+          property='og:description'
+          content='Soy Diego Sotomayor, un desarrollador full stack con más de 3 años de experiencia en tecnologías como TypeScript, NextJS, T3 Stack, TRPC, MERN, Chatbot e Inteligencia Artificial.'
+        />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://codicod.vercel.app' />
+        <link
+          rel='apple-touch-icon'
+          sizes='57x57'
+          href='/apple-icon-57x57.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='60x60'
+          href='/apple-icon-60x60.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='72x72'
+          href='/apple-icon-72x72.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='76x76'
+          href='/apple-icon-76x76.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='114x114'
+          href='/apple-icon-114x114.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='120x120'
+          href='/apple-icon-120x120.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='144x144'
+          href='/apple-icon-144x144.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='152x152'
+          href='/apple-icon-152x152.png'
+        />
+        <link
+          rel='apple-touch-icon'
+          sizes='180x180'
+          href='/apple-icon-180x180.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='/android-icon-192x192.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='96x96'
+          href='/favicon-96x96.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
+        <link rel='manifest' href='/manifest.json' />
+        <meta name='msapplication-TileColor' content='#ffffff' />
+        <meta name='msapplication-TileImage' content='/ms-icon-144x144.png' />
+        <meta name='theme-color' content='#ffffff'></meta>
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta
+          name='twitter:title'
+          content='Diego Sotomayor - Desarrollador Full Stack TypeScript'
+        />
+        <meta
+          name='twitter:description'
+          content='Soy Diego Sotomayor, un desarrollador full stack con más de 3 años de experiencia en tecnologías como TypeScript, NextJS, T3 Stack, TRPC, MERN, Chatbot e Inteligencia Artificial.'
+        />
+        <meta
+          name='twitter:image'
+          content='https://codicod.vercel.app/apple-icon-57x57.png'
+        />
+        <meta name='author' content='Diego Sotomayor' />
+        <meta
+          name='keywords'
+          content='Desarrollador Full Stack, TypeScript, NextJS, T3 Stack, TRPC, MERN, Chatbot, Inteligencia Artificial'
+        />
+        <meta name='robots' content='index,follow' />
+      </head>
       <body className={`${poppins.className} `}>{children}</body>
     </html>
   )
