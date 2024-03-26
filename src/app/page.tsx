@@ -1,113 +1,323 @@
-import Image from "next/image";
+'use client'
+import ButtonDegrade from '@/components/button-degrade'
+import Blur from '@/components/icons/logo'
+import Intro from '@/components/intro'
+import { motion } from 'framer-motion'
+import {
+  ArrowUpRight,
+  Facebook,
+  GithubIcon,
+  Globe,
+  Lightbulb,
+  Linkedin,
+  MessageCircle,
+  WebhookIcon
+} from 'lucide-react'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { timeIntroInS } from './constants/style'
+import Navbar from '@/components/header/navbar'
+import ItemExperience from '@/components/item-experience'
+import { itemsExperiences } from './constants/info'
+import Burbles from '@/components/burbles'
+import Proyects from '@/components/proyects'
+import SectionPlayground from '@/components/section-playground'
+import Footer from '@/components/footer'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
-export default function Home() {
+export default function Home () {
+  const [visibleIntro, setVisibleIntro] = useState(true)
+  useEffect(() => {
+    setTimeout(() => {
+      setVisibleIntro(false)
+    }, timeIntroInS * 1000)
+  }, [])
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <main className='flex min-h-screen flex-col items-center justify-between '>
+        <Intro visibleIntro={visibleIntro} />
+        {!visibleIntro && (
+          <>
+            <Navbar />
+            <motion.section
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
+              className='relative min-h-screen md:h-screen p-5 xl:p-0 w-full overflow-hidden'
+              style={{
+                maskImage:
+                  'linear-gradient(transparent 0%, black 5%, black 95%, transparent 100%)'
+              }}
+            >
+              <Blur className='md:!left-[80vw] -z-20' />
+              <div className='grid md:grid-cols-2 gap-8 items-center max-w-[1140px] mx-auto h-full'>
+                <article
+                  className='flex flex-col justify-center md:justify-start md:items-start items-center'
+                  id='home'
+                >
+                  <div className='flex flex-row gap-8 items-center justify-center md:justify-start'>
+                    <object
+                      data='/codicod-imagotype-animated.svg'
+                      type='image/svg+xml'
+                      className='w-32 aspect-[1/1] -mx-10'
+                    />
+                    <p className='font-semibold'> | De idea a software</p>
+                  </div>
+                  <h1 className='text-3xl md:text-5xl font-semibold'>
+                    Diego Sotomayor
+                  </h1>
+                  <p className='mt-2 opacity-70 lg:w-[500px] text-center md:text-start'>
+                    Soy un desarrollador y emprendedor que busca transformar
+                    nuevas ideas a productos digitales.
+                  </p>
+                  <div className='flex gap-2 text-secondary font-medium text-sm mt-2 '>
+                    <Link
+                      href='#about'
+                      className='flex gap-1 items-center hover:text-primary'
+                    >
+                      Experiencia{' '}
+                      <motion.div
+                        animate={{
+                          rotate: ['0deg', '-45deg', '0deg'],
+                          transition: {
+                            delay: 0.3,
+                            duration: 0.75,
+                            repeat: Infinity,
+                            repeatDelay: 0.5
+                          }
+                        }}
+                      >
+                        <ArrowUpRight className='w-4' />
+                      </motion.div>
+                    </Link>
+                    <Link
+                      href='#about'
+                      className='flex gap-1 items-center hover:text-primary'
+                    >
+                      Propósito{' '}
+                      <motion.div
+                        animate={{
+                          rotate: ['0deg', '-45deg', '0deg'],
+                          transition: {
+                            delay: 0.3,
+                            duration: 0.75,
+                            repeat: Infinity,
+                            repeatDelay: 0.5
+                          }
+                        }}
+                      >
+                        <ArrowUpRight className='w-4' />
+                      </motion.div>
+                    </Link>
+                    <Link
+                      href='#about'
+                      className='flex gap-1 items-center hover:text-primary'
+                    >
+                      Skills{' '}
+                      <motion.div
+                        animate={{
+                          rotate: ['0deg', '-45deg', '0deg'],
+                          transition: {
+                            delay: 0.3,
+                            duration: 0.75,
+                            repeat: Infinity,
+                            repeatDelay: 0.5
+                          }
+                        }}
+                      >
+                        <ArrowUpRight className='w-4' />
+                      </motion.div>
+                    </Link>
+                  </div>
+                  <div className='mt-6 flex flex-col md:flex-row gap-4 items-center'>
+                    <div>
+                      <ButtonDegrade text='Contáctame' icon='↗️' />
+                    </div>
+                    <div className=' flex flex-row gap-2'>
+                      <Link
+                        target='_blank'
+                        rel='noreferrer'
+                        href='https://www.linkedin.com/in/diego-sotomayor-rios-473ba819a/'
+                      >
+                        <Linkedin className='hover:text-primary cursor-pointer' />
+                      </Link>
+                      <Link
+                        target='_blank'
+                        rel='noreferrer'
+                        href='https://github.com/Diegosotomayor1'
+                      >
+                        <GithubIcon className='hover:text-primary cursor-pointer' />
+                      </Link>
+                      <Link
+                        target='_blank'
+                        rel='noreferrer'
+                        href='https://www.facebook.com/Diego123479'
+                      >
+                        <Facebook className='hover:text-primary cursor-pointer' />
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+                <article className='relative flex flex-col items-center justify-center overflow-hidden h-full'>
+                  <div className='relative'>
+                    <Image
+                      src='/diego.jpg'
+                      className='rounded-lg object-cover h-[330px] md:h-[450px] w-[300px] md:w-[400px] md:my-20'
+                      style={{
+                        maskImage: 'radial-gradient(black 62%, transparent 72%)'
+                      }}
+                      alt='Diego'
+                      width={400}
+                      height={500}
+                    />
+                    <div className='absolute bottom-14 right-0 flex flex-col items-end w-fit'>
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        whileInView={{
+                          scale: 1,
+                          transition: { duration: 0.5, delay: 0.5 }
+                        }}
+                      >
+                        <ButtonDegrade
+                          text='CTO de Pcentrix'
+                          icon='| Hola 🖐️!'
+                          className='w-fit'
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ scale: 0.7, opacity: 0 }}
+                        whileInView={{
+                          scale: 1,
+                          opacity: 1,
+                          transition: { duration: 0.2, delay: 1 }
+                        }}
+                      >
+                        <ButtonDegrade
+                          text='Desarrollador Full Stack '
+                          className='w-fit text-sm !bg-black text-white'
+                        />
+                      </motion.div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </motion.section>
+            <section
+              className='relative min-h-screen flex items-center justify-center overflow-hidden w-full'
+              style={{
+                maskImage:
+                  'linear-gradient(transparent 0%, black 5%, black 95%, transparent 100%)'
+              }}
+              id='about'
+            >
+              <Blur className='!-left-[60vh] ' />
+              <div className='grid md:grid-cols-2 gap-8 max-w-[1140px] mx-auto p-5 xl:p-0 mt-10 md:mt-0 pb-10 md:pb-0'>
+                <motion.article
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 1 }}
+                >
+                  <h2 className='text-3xl font-semibold text-secondary'>
+                    Sobre mí
+                  </h2>
+                  <hr className='w-[100px] mt-2 mb-5 h-1 bg-primary' />
+                  <ul className='flex flex-col gap-4 md:text-balance mt-2 text-sm text-gray-800 leading-6'>
+                    <li>
+                      Soy un desarrollador apasionado por mejorar las
+                      experiencias de usuario, innovador de corazón y
+                      autodidacta.
+                    </li>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+                    <li>
+                      Comencé con WordPress, enfocándome en SEO y usabilidad.
+                      Luego, descubrí JavaScript y lo utilicé para nuevas
+                      funcionalidades, como un CRM. Posteriormente, me aventuré
+                      con Node.js y Vue.js.
+                    </li>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+                    <li>
+                      En 2021, fundé una empresa de computadoras convertida en
+                      taller técnico. Mejoré la experiencia del cliente con
+                      cotizaciones y diagnósticos automáticos, e implementé un
+                      seguimiento en tiempo real.
+                    </li>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+                    <li>
+                      Participamos en un concurso financiado por Proinnovate
+                      para tercerizar el servicio técnico y automatizar el
+                      recojo, entrega y reparación pero tuvimos que pivotear a
+                      un software para técnicos.
+                    </li>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+                    <li>
+                      Actualmente, busco proyectos con gran potencial de
+                      crecimiento en el cual pueda aportar a construir un gran
+                      producto digital.
+                    </li>
+                  </ul>
+                </motion.article>
+                <article className='flex flex-col relative'>
+                  <motion.h3
+                    whileInView={{
+                      opacity: 1,
+                      x: 0,
+                      transition: { duration: 0.5 }
+                    }}
+                    initial={{ opacity: 0, x: 200 }}
+                    className='font-semibold flex items-end justify-end bg-secondary text-sm p-2 px-5 text-white rounded-2xl  '
+                  >
+                    Experiencia
+                  </motion.h3>
+                  <div className='grid gap-12 mt-10'>
+                    {itemsExperiences().map(item => (
+                      <ItemExperience key={item.company} {...item} />
+                    ))}
+                  </div>
+                </article>
+              </div>
+            </section>
+            <div
+              className='w-full overflow-hidden relative'
+              style={{
+                maskImage:
+                  'linear-gradient(transparent 0%, black 5%, black 95%, transparent 100%)'
+              }}
+            >
+              <Blur className='-z-50 opacity-10' />
+              <section
+                className='relative flex flex-col items-start justify-center p-5 md:p-0 md:w-[1140px] min-h-screen mt-32 md:mt-0 mx-auto '
+                id='projects'
+              >
+                <div className='mb-5'>
+                  <h2 className='text-3xl font-semibold text-secondary'>
+                    Mis últimos proyectos
+                  </h2>
+                  <hr className='w-[100px] mt-2 mb-5 h-1 bg-primary' />
+                  <p className='text-gray-800 lg:w-[800px] text-sm'>
+                    Recientemente, he trabajado en proyectos comerciales dentro
+                    de una startup, donde he sido testigo de procesos dinámicos
+                    de cambio y evolución. Estas experiencias me han permitido
+                    contribuir activamente en la creación de soluciones
+                    innovadoras y escalables.
+                  </p>
+                </div>
+                <Proyects />
+                <Link
+                  href='https://github.com/Diegosotomayor1'
+                  className='mt-10 mx-auto'
+                >
+                  <Button className='bg-primary'>
+                    <GithubIcon className='mr-2' />
+                    Ver todos mis proyectos
+                  </Button>
+                </Link>
+              </section>
+            </div>
+            <SectionPlayground />
+            <Footer />
+          </>
+        )}
+      </main>
+    </>
+  )
 }
