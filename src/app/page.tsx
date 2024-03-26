@@ -159,13 +159,18 @@ export default function Home () {
                   </div>
                 </article>
                 <article className='relative flex flex-col items-center justify-center overflow-hidden h-full'>
-                  <div className='relative'>
+                  <motion.div
+                    className='relative'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+                  >
                     <Image
                       src='/diego.jpg'
                       className='rounded-lg object-cover h-[330px] md:h-[450px] w-[300px] md:w-[400px] md:my-20'
                       style={{
                         maskImage: 'radial-gradient(black 62%, transparent 72%)'
                       }}
+                      priority
                       alt='Diego'
                       width={400}
                       height={500}
@@ -198,7 +203,7 @@ export default function Home () {
                         />
                       </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 </article>
               </div>
             </motion.section>
@@ -285,7 +290,7 @@ export default function Home () {
             >
               <Blur className='-z-50 opacity-10' />
               <section
-                className='relative flex flex-col items-start justify-center p-5 md:p-0 md:w-[1140px] min-h-screen mt-32 md:mt-0 mx-auto '
+                className='relative z-20 flex flex-col items-start justify-center p-5 md:p-0 md:w-[1140px] min-h-screen mt-32 md:mt-0 mx-auto '
                 id='projects'
               >
                 <div className='mb-5'>
