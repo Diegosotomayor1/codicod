@@ -288,7 +288,7 @@ export default function Home () {
                   'linear-gradient(transparent 0%, black 5%, black 95%, transparent 100%)'
               }}
             >
-              <Blur className='-z-50 opacity-10' />
+              <Blur className='!-z-50 opacity-10' />
               <section
                 className='relative z-20 flex flex-col items-start justify-center p-5 md:p-0 md:w-[1140px] min-h-screen mt-32 md:mt-0 mx-auto '
                 id='projects'
