@@ -17,9 +17,9 @@ const projects = [
   },
   {
     name: 'Terapia IA',
-    imageInitial: '/pcentrix_logo_portfolio.jpg',
-    imageHover: '/overlay_nova.png',
-    description: 'Chatbot de la empresa Pcentrix'
+    imageInitial: '/terapia-logo.jpg',
+    imageHover: '/terapia.png',
+    description: 'Terapeuta Bot'
   }
 ]
 export default function Proyects () {
