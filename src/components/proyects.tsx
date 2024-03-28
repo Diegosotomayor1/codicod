@@ -1,27 +1,9 @@
 'use client'
+import { projects } from '@/app/constants/info'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-const projects = [
-  {
-    name: 'Proyecto Saas para técnicos',
-    imageInitial: '/pcentrix_logo_portfolio.jpg',
-    imageHover: '/overlay_saas.png',
-    description: 'Sitio web de la empresa Pcentrix'
-  },
-  {
-    name: 'Proyecto de chatbot',
-    imageInitial: '/nova_portfolio.jpg',
-    imageHover: '/overlay_nova.png',
-    description: 'Chatbot de la empresa Pcentrix'
-  },
-  {
-    name: 'Terapia IA',
-    imageInitial: '/terapia-logo.jpg',
-    imageHover: '/terapia.png',
-    description: 'Terapeuta Bot'
-  }
-]
+
 export default function Proyects () {
   const isSmall = useMediaQuery('(max-width: 767px)')
   const variantsDesktop = {

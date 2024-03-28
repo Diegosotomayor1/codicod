@@ -48,3 +48,24 @@ export const itemsExperiences = () => [
     technologies: ['Wordpress', 'PHP', 'Integración de proveedor en e-commerce']
   }
 ]
+
+export const projects = [
+  {
+    name: 'Proyecto Saas para técnicos',
+    imageInitial: '/pcentrix_logo_portfolio.jpg',
+    imageHover: '/overlay_saas.png',
+    description: 'Sitio web de la empresa Pcentrix'
+  },
+  {
+    name: 'Proyecto de chatbot',
+    imageInitial: '/nova_portfolio.jpg',
+    imageHover: '/overlay_nova.png',
+    description: 'Chatbot de la empresa Pcentrix'
+  },
+  {
+    name: 'Terapia IA',
+    imageInitial: '/terapia-logo.jpg',
+    imageHover: '/terapia.png',
+    description: 'Terapeuta Bot'
+  }
+]
