@@ -29,16 +29,16 @@ export default function Navbar () {
           delay: 0.5
         }
       }}
-      className={`fixed z-50 bottom-5`}
+      className={`fixed z-50 bottom-2 md:bottom-5`}
       style={{ left: `${widthCenterNav}px` }}
     >
-      <section className='relative flex flex-row gap-6 items-center justify-center p-5 px-10 bg-[rgb(255,255,255,0.5)] backdrop-blur-md shadow-[0px_0px_40px_rgb(60,171,170,0.2)] rounded-3xl [&>a]:p-1'>
+      <section className='relative flex flex-row gap-6 items-center justify-center p-5 px-10 bg-[rgb(255,255,255,0.75)] backdrop-blur-md shadow-[0px_0px_40px_rgb(60,171,170,0.2)] rounded-3xl [&>a]:p-1'>
         <object
           data='/codicod-imagotype-animated.svg'
           type='image/svg+xml'
-          className='w-16 -m-5'
+          className='w-16 -m-5 hidden md:flex '
         />
-        <div className='w-1 h-8 bg-gradient-to-t rounded-full from-primary to-secondary' />
+        <div className='w-1 h-8 hidden md:flex bg-gradient-to-t rounded-full from-primary to-secondary' />
         <Link
           href=''
           className='flex flex-col items-center justify-center text-transparent bg-clip-text text-gradient bg-gradient-to-l from-primary to-secondary hover:scale-90 transition-transform duration-300'

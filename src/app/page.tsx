@@ -49,7 +49,7 @@ export default function Home () {
                   'linear-gradient(transparent 0%, black 5%, black 95%, transparent 100%)'
               }}
             >
-              <Blur className='md:!left-[80vw] -z-20' />
+              <Blur className='md:!left-[80vw] !-z-20' />
               <div className='grid md:grid-cols-2 gap-8 items-center max-w-[1140px] mx-auto h-full'>
                 <article
                   className='flex flex-col justify-center md:justify-start md:items-start items-center'
@@ -130,9 +130,9 @@ export default function Home () {
                     </Link>
                   </div>
                   <div className='mt-6 flex flex-col md:flex-row gap-4 items-center'>
-                    <div>
+                    <Link href='#contact'>
                       <ButtonDegrade text='Contáctame' icon='↗️' />
-                    </div>
+                    </Link>
                     <div className=' flex flex-row gap-2'>
                       <Link
                         target='_blank'
