@@ -77,29 +77,29 @@ export default function Footer () {
         <form action={handleSubmit}>
           <div className='space-y-4'>
             <div className='space-y-2'>
-              <Label htmlFor='name'>Name</Label>
-              <Input id='name' name='name' placeholder='Enter your name' />
+              <Label htmlFor='name'>Nombre</Label>
+              <Input id='name' name='name' placeholder='Jhon Doe' />
             </div>
             <div className='space-y-2'>
               <Label htmlFor='email'>Email</Label>
               <Input
                 id='email'
                 name='email'
-                placeholder='Enter your email'
+                placeholder='example@example.com'
                 type='email'
               />
             </div>
             <div className='space-y-2'>
-              <Label htmlFor='message'>Message</Label>
+              <Label htmlFor='message'>Mensaje</Label>
               <Textarea
                 className='min-h-[100px]'
                 id='message'
                 name='message'
-                placeholder='Enter your message'
+                placeholder='Estoy interesado en sus servicios como programador ...'
               />
             </div>
             <Button className='text-white'>
-              <Mail className='mr-2' /> Send
+              <Mail className='mr-2' /> Enviar
             </Button>
           </div>
         </form>
