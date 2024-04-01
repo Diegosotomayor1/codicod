@@ -308,6 +308,8 @@ export default function Home () {
                 </div>
                 <Proyects />
                 <Link
+                  target='_blank'
+                  rel='noreferrer'
                   href='https://github.com/Diegosotomayor1'
                   className='mt-10 mx-auto'
                 >
