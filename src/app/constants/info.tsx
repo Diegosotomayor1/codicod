@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import { Linkedin } from "lucide-react";
 import { Globe } from "lucide-react";
 
@@ -22,7 +23,7 @@ export const itemsExperiences = (): ItemExperience[] => [
     image: "/entiendo_logo.svg",
     description: `Me encargué de desarrollar un chatbot donde ingresabas un prompt o un archivo retorna el tipo de transformacion 
     que quieres ya sea video, audio, podcast, simulacion, juegos, mapas mentales, quizzes, etc.`,
-    dateRange: "06/2024 - Actualidad",
+    dateRange: "06/2024 - Ahora",
     demoLinks: [
       {
         icon: <Globe className="w-4 h-4" />,
@@ -43,7 +44,7 @@ export const itemsExperiences = (): ItemExperience[] => [
     jobPosition: "Founder & CTO",
     description:
       "Fui lider de un proyecto ERP y de un chatbot para la automatizacion en talleres de reparación.",
-    dateRange: "12/2021- Ahora",
+    dateRange: "12/2021- 2024",
     image: "/pcentrix_logo.svg",
     demoLinks: [
       {
@@ -96,17 +97,21 @@ export const projects = [
     imageInitial: "/pcentrix_logo_portfolio.jpg",
     imageHover: "/overlay_saas.png",
     description: "Sitio web de la empresa Pcentrix",
+    url: "https://pcentrix.com",
   },
   {
     name: "Proyecto de chatbot",
     imageInitial: "/nova_portfolio.jpg",
     imageHover: "/overlay_nova.png",
     description: "Chatbot de la empresa Pcentrix",
+    url: "https://pcentrix.com/public/profile?email=diesor53@gmail.com",
   },
   {
     name: "Terapia IA",
     imageInitial: "/terapia-logo.jpg",
     imageHover: "/terapia.png",
     description: "Terapeuta Bot",
+    url: "https://terapy-ai.vercel.app",
+    urlProject: "https://github.com/Diegosotomayor1/terapy.ai",
   },
 ];
