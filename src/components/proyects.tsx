@@ -104,6 +104,14 @@ export default function Proyects() {
                   {project.name}
                 </button>
               </div>
+              <div className="absolute bottom-4 right-4 text-white transition-opacity duration-300 flex gap-2">
+                <Link href={project.url} target="_blank" className="flex gap-1 bg-primary p-2 rounded-full hover:scale-110 transition-all hover:bg-secondary text-xs" >
+                  <GlobeIcon  className="w-4 h-4"/> Vista previa
+                </Link>
+                {project.urlProject && <Link  className="flex gap-1 bg-primary p-2 rounded-full hover:scale-110 transition-all hover:bg-secondary text-xs" href={project.urlProject}  target="_blank">
+                  <GithubIcon className="w-4 h-4" /> Ver código
+                </Link>}
+              </div>
             </article>
           ))}
         </section>
